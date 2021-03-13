@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container">
+<br>
+
+<ul class="nav nav-tabs">
+   <li><a href="#a" data-toggle="tab">Main</a></li>
+   <li><a href="#b" data-toggle="tab">Main 2</a></li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="a">
+
+<form style="margin-top: 10px;">
+  
+  <div class="row">
+    <div class="col-md-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Name">
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Age">
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Range">
+    </div>
+  </div>
+ 
+ <br>
+
+   <div class="row" >
+    <div class="col-md-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Email">
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Address">
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="City/State">
+    </div>
+
+    </div>
+
+  <br>
+
+<div class="row">
+<div class="col-md-4">
+<select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
+  <option selected>Located</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+</div>
+
+<div class="col-md-4"></div>
+<div class="col-md-4"></div>
+</div>
+
+<br>
+
+<div class="row">
+<div class="col-md-12 col-sm-12">
+
+<h4>Financial goals</h4>
+
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1"> Eliminate debt</label>
+
+  <input type="checkbox" class="custom-control-input ml" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1"> Build savings</label>
+
+   <input type="checkbox" class="custom-control-input ml" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1"> Build emergency fund</label>
+
+   <input type="checkbox" class="custom-control-input ml" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1"> Save for Retirement</label>
+
+   <input type="checkbox" class="custom-control-input ml" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1"> Budget for Vacations/Getaways</label>
+</div>
+
+</div>
+</div>
+
+<br>
+
+<div class="form-check">
+
+<div class="row">
+<div class="col-md-6 col-sm-6">
+
+<h4>Budget experience</h4>  
+
+<label for="customRange1" class="form-label">Scale 1-5 </label>
+<input type="range" class="form-range" id="customRange1">
+
+<p><span style="margin-left: 75px;">1</span> <span style="margin-left:  95px;">2</span> <span style="margin-left: 95px;">3 </span><span style="margin-left:  95px;">4</span><span style="margin-left:  95px;">5</span></p>
+
+<label for="customRange1" class="form-label">Also 1-5 scale </label>
+<input type="range" class="form-range" id="customRange1">
+
+<p><span style="margin-left: 75px;">1</span> <span style="margin-left:  95px;">2</span> <span style="margin-left: 95px;">3 </span><span style="margin-left:  95px;">4</span><span style="margin-left:  95px;">5</span></p>
+
+</div>
+
+<div class="col-md-6 col-sm-6"></div>
+
+</div>
+
+<br>
+
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <input type="text" class="form-control" placeholder="User insert in USD income into box of income of job(s)">
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <input type="text" class="form-control" placeholder=" 401k contribution (amount taken out of monthly income that contributes to 401k)">
+    
+    <br>
+
+ <button type="button" class="btn btn-primary" style="float: right;">
+    Submit
+  </button>
+
+    </div>
+   
+  </div>
+
+</div>
+
+
+</form>
+
+</div>
+
+<!-- tab one end -->
+
+<div class="tab-pane" id="b">
+
+ <form style="margin-top: 10px;"> 
+ 
+ <h4>Categories</h4> 
+
+<div class="row">
+
+  <div class="col-md-4 col-sm-4">
+
+   <label for="x">NEEDS Category</label>
+  <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
+    <option value="1">Rent/mortgage</option>
+    <option value="2">(Health) insurance</option>
+    <option value="3">Car/Auto Insurance</option>
+    <option value="4">Gas</option>
+    <option value="5">Utilities</option>
+    <option value="6">Phone</option>
+    <option value="7">Minimum car payment</option>
+  </select>
+
+</div>
+
+
+
+ <div class="col-md-4 col-sm-4">
+
+ <label for="x">WANTS Category</label>
+  <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
+    <option value="a">Restaurants</option>
+    <option value="b">Entertainment</option>
+    <option value="c">Tickets, etc</option>
+    <option value="c">Subscriptions</option>
+    <option value="c">Shopping</option>
+    <option value="c">Clothing </option>
+  </select>
+
+</div>
+
+ <div class="col-md-4 col-sm-4">
+
+ <label for="x">SAVINGS Category</label>
+  <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
+    <option value="a">Savings account contributions</option>
+    <option value="b">Emergency fund contribution</option>
+    <option value="c">Retirement</option>
+    <option value="c">Minimum debt payments</option>
+    <option value="c">Creditcards</option>
+    <option value="c">loans, etc </option>
+  </select>
+
+<br>
+ <button type="button" class="btn btn-primary" style="float: right;">
+    Submit
+  </button>
+
+ </div>
+
+</div>
+
+
+
+</form>
+
+</div>
+
+
+
+
+
+
+</div>
+<!-- container div closed -->
+</div>
+
+<style type="text/css">
+  
+.ml
+{
+  margin-left: 10px!important;
+}
+
+</style>
+
+</body>
+</html>
