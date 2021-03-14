@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title></title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet"/>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Budget Calculator CSS -->
+    <link rel="stylesheet" href="budget-calculator.css" type="text/css" />
+    
+</head>    
 <body>
-
 <div class="container">
-<br>
 
-<ul class="nav nav-tabs">
-   <li><a href="#a" data-toggle="tab">Main</a></li>
-   <li><a href="#b" data-toggle="tab">Main 2</a></li>
+<h1>Budget Calculator</h1>    
+<!-- <h3>This is a simple budget Calculator made using jQuery, it makes use of HTML5's local storage to save the results</h3>
+<p>Using HTML5's localstorage this budget calculator saves the data to the browser internal storage using javascript objects</p>
+<p>Dependancies:</p>
+<ul>
+    <li>HTML5 Localstorage</li>
+    <li>Bootstrap</li> 
+    <li>jQuery</li> 
 </ul>
-
-<div class="tab-content">
-
-<div class="tab-pane active" id="a">
+<h3>External Files Used:</h3>
+<code>budget-calculator.css</code>
+<code>budget-calculator.js</code>
+<br/><br/><br/>
+<p>Click <a href="#reset-localstorage" class="reset-localstorage">here to reset the localstorage</a> and clear back down to it's defaults</p>
+<br/><br/><br/> -->
+    
+<!-- #############  BEGIN Budget Calculator HTML #############  -->    
 
 <form style="margin-top: 10px;">
-  
+      
   <div class="row">
     <div class="col-md-4 col-sm-4">
       <input type="text" class="form-control" placeholder="Name">
@@ -44,27 +59,21 @@
     <div class="col-md-4 col-sm-4">
       <input type="text" class="form-control" placeholder="Address">
     </div>
-    <div class="col-md-4 col-sm-4">
-      <input type="text" class="form-control" placeholder="City/State">
-    </div>
+
+    <div class="col-md-4">
+      <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
+        <option selected>City/State</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      </div>
+      
 
     </div>
 
   <br>
 
-<div class="row">
-<div class="col-md-4">
-<select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
-  <option selected>Located</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-</div>
-
-<div class="col-md-4"></div>
-<div class="col-md-4"></div>
-</div>
 
 <br>
 
@@ -121,114 +130,122 @@
 <br>
 
   <div class="row">
-    <div class="col-md-6 col-sm-6">
-      <input type="text" class="form-control" placeholder="User insert in USD income into box of income of job(s)">
-    </div>
+   
     <div class="col-md-6 col-sm-6">
       <input type="text" class="form-control" placeholder=" 401k contribution (amount taken out of monthly income that contributes to 401k)">
     
-    <br>
+      <br>
 
- <button type="button" class="btn btn-primary" style="float: right;">
+ <button type="button" class="btn btn-primary">
     Submit
   </button>
-
-    </div>
+</div>
    
   </div>
+  <br>
 
 </div>
 
 
 </form>
+<div class="budget-calculator">          
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#income" role="tab" data-toggle="tab">Your income</a></li>
+      <li><a href="#outgoings" role="tab" data-toggle="tab">Your outgoings</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="income">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th>Your income</th>
+                    <th>Frequency</th>
+                    <th>Amount</th>
+                    <th>Annual Amount</th>
+                    <th>&nbsp;</th>
+               </tr> 
+           </thead>
+           <tbody></tbody>
+           <tfoot>
+           	<tr><td colspan="100"><span class="btn btn-xs btn-primary add-row" data-type="income"><i class="glyphicon glyphicon-plus-sign"></i> add income row</span></td></tr>
+           	<tr><td colspan="100"><span class="total">Total: $0</span></td></tr>
+           </tfoot>
+        </table>
+      </div><!-- tab-pane -->
+      <div class="tab-pane fade" id="outgoings">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th>Outgoing Expense</th>
+                    <th>Frequency</th>
+                    <th>Amount</th>
+                    <th>Annual Amount</th>
+                    <th>&nbsp;</th>
+               </tr> 
+           </thead>
+           <tbody></tbody>
+           <tfoot>
+           	<tr><td colspan="100"><span class="btn btn-xs btn-primary add-row" data-type="outgoings"><i class="glyphicon glyphicon-plus-sign"></i> add outgoings row</span></td></tr>
+           	<tr><td colspan="100"><span class="total">Total: $0</span></td></tr>
+           </tfoot>
+        </table>      
+      </div><!-- tab-pane -->
+      <div class="" id="totals">
+        <div class="totals total-income">
+            <h3>Total yearly income: <span>$0</span></h3>
+            <div class="progress progress-striped active">
+            	<div class="progress-bar" style="width:0%"></div>
+            </div>
+        </div>
+        <div class="totals total-outgoings">
+            <h3>Total yearly outgoings: <span>$0</span></h3>
+            <div class="progress progress-striped active">
+            	<div class="progress-bar" style="width:0%"></div>
+            </div>
+        </div>
+        <div class="totals total-savings">
+            <h3>Each year you save: <span>$0</span></h3>
+            <div class="progress progress-striped active">
+            	<div class="progress-bar progress-bar-success" style="width:0%"></div>
+            </div>
+        </div>
+      </div><!-- tab-pane -->
+    </div><!-- tab-content -->
+    <!-- bootstrap modal -->        
+    <div class="modal fade" id="budget-calculator-add-row">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Add row</h4>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="add-row-name">Expense Name</label>
+                <input type="text" class="form-control" id="add-row-name" placeholder="">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn-add-row" data-type="">Add Row</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal --> 
+</div>  <!-- .budget-calculator -->
+<!-- #############  END Budget Calculator HTML #############  -->   
 
+
+    
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<!-- tab one end -->
-
-<div class="tab-pane" id="b">
-
- <form style="margin-top: 10px;"> 
- 
- <h4>Categories</h4> 
-
-<div class="row">
-
-  <div class="col-md-4 col-sm-4">
-
-   <label for="x">NEEDS Category</label>
-  <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
-    <option value="1">Rent/mortgage</option>
-    <option value="2">(Health) insurance</option>
-    <option value="3">Car/Auto Insurance</option>
-    <option value="4">Gas</option>
-    <option value="5">Utilities</option>
-    <option value="6">Phone</option>
-    <option value="7">Minimum car payment</option>
-  </select>
-
-</div>
-
-
-
- <div class="col-md-4 col-sm-4">
-
- <label for="x">WANTS Category</label>
-  <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
-    <option value="a">Restaurants</option>
-    <option value="b">Entertainment</option>
-    <option value="c">Tickets, etc</option>
-    <option value="c">Subscriptions</option>
-    <option value="c">Shopping</option>
-    <option value="c">Clothing </option>
-  </select>
-
-</div>
-
- <div class="col-md-4 col-sm-4">
-
- <label for="x">SAVINGS Category</label>
-  <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
-    <option value="a">Savings account contributions</option>
-    <option value="b">Emergency fund contribution</option>
-    <option value="c">Retirement</option>
-    <option value="c">Minimum debt payments</option>
-    <option value="c">Creditcards</option>
-    <option value="c">loans, etc </option>
-  </select>
-
-<br>
- <button type="button" class="btn btn-primary" style="float: right;">
-    Submit
-  </button>
-
- </div>
-
-</div>
-
-
-
-</form>
-
-</div>
-
-
-
-
-
-
-</div>
-<!-- container div closed -->
-</div>
-
-<style type="text/css">
-  
-.ml
-{
-  margin-left: 10px!important;
-}
-
-</style>
+<!-- Budget Calculator JS -->
+<script src="budget-calculator.js"></script>
 
 </body>
 </html>
+
