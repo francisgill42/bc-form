@@ -132,7 +132,7 @@
   <div class="row">
    
     <div class="col-md-6 col-sm-6">
-      <input type="text" class="form-control" placeholder=" 401k contribution (amount taken out of monthly income that contributes to 401k)">
+      <input id="income_input" type="text" class="form-control" placeholder=" 401k contribution (amount taken out of monthly income that contributes to 401k)">
     </div>
    
   </div>
@@ -189,13 +189,19 @@
 </div>
 <br><br><br><br>
 <div class="col-md-12">
-  <button type="button" class="btn btn-primary">
+  <button id="submit_btn" type="button" class="btn btn-primary">
     Submit
   </button>
 
   <br><br>
 
-  <div class="budget-calculator">          
+<h3>Needs: <span>$<span id="needs"></span></span></h3>
+<h3>Wants: <span>$<span id="wants"></span></span></h3>
+<h3>Savings: <span>$<span id="savings"></span></span></h3>
+</form>
+    
+
+  <div style="display: none;" class="budget-calculator">          
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a href="#income" role="tab" data-toggle="tab">Your income</a></li>
@@ -286,7 +292,6 @@
 </div>  
 
 
-</form>
 
 <!-- #############  END Budget Calculator HTML #############  -->   
 
@@ -298,6 +303,24 @@
 
 <!-- Budget Calculator JS -->
 <script src="budget-calculator.js"></script>
+
+<script type="text/javascript">
+  $('#income_input').blur((e) => getResults());
+  $('#submit_btn').blur((e) => getResults());
+
+  function getResults() {
+   var income_input = $('#income_input').val() / 100;
+
+   var needs = income_input * 50;
+   var wants = income_input * 30;
+   var savings = income_input * 20;
+   // console.log(needs,wants,savings);
+
+   $('#needs').text(needs);
+   $('#wants').text(wants);
+   $('#savings').text(savings);
+  }
+</script>
 
 </body>
 </html>
