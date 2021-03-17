@@ -36,7 +36,7 @@
     
 <!-- #############  BEGIN Budget Calculator HTML #############  -->    
 
-<form style="margin-top: 10px;">
+
       
   <div class="row">
     <div class="col-md-4 col-sm-4">
@@ -135,73 +135,11 @@
       <input id="income_input" type="text" class="form-control" placeholder=" 401k contribution (amount taken out of monthly income that contributes to 401k)">
     </div>
    
-  </div>
-  <br>
-
-  <h4>Expenses</h4> 
+  <br><br>  <br>
      
-     <div class="row">
-     
-       <div class="col-md-4 col-sm-4">
-     
-       <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
-        <option selected>NEEDS</option>
-        <option value="1">Rent/mortgage</option>
-         <option value="2">(Health) insurance</option>
-         <option value="3">Car/Auto Insurance</option>
-         <option value="4">Gas</option>
-         <option value="5">Utilities</option>
-         <option value="6">Phone</option>
-         <option value="7">Minimum car payment</option>
-       </select>
-     
-     </div>
-     
-     
-     
-      <div class="col-md-4 col-sm-4">
-     
-       <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
-        <option selected>WANTS</option>
-        <option value="a">Restaurants</option>
-         <option value="b">Entertainment</option>
-         <option value="c">Tickets, etc</option>
-         <option value="c">Subscriptions</option>
-         <option value="c">Shopping</option>
-         <option value="c">Clothing </option>
-       </select>
-     
-     </div>
-     
-      <div class="col-md-4 col-sm-4">
-     
-       <select class="form-select form-select-lg form-control" aria-label=".form-select-lg example">
-        <option selected>SAVINGS</option>
-        <option value="a">Savings account contributions</option>
-         <option value="b">Emergency fund contribution</option>
-         <option value="c">Retirement</option>
-         <option value="c">Minimum debt payments</option>
-         <option value="c">Creditcards</option>
-         <option value="c">loans, etc </option>
-       </select>
-     
-
-</div>
-<br><br><br><br>
 <div class="col-md-12">
-  <button id="submit_btn" type="button" class="btn btn-primary">
-    Submit
-  </button>
 
-  <br><br>
-
-<h3>Needs: <span>$<span id="needs"></span></span></h3>
-<h3>Wants: <span>$<span id="wants"></span></span></h3>
-<h3>Savings: <span>$<span id="savings"></span></span></h3>
-</form>
-    
-
-  <div style="display: none;" class="budget-calculator">          
+  <div class="budget-calculator">          
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a href="#income" role="tab" data-toggle="tab">Your income</a></li>
@@ -243,8 +181,14 @@
            	<tr><td colspan="100"><span class="btn btn-xs btn-primary add-row" data-type="outgoings"><i class="glyphicon glyphicon-plus-sign"></i> add outgoings row</span></td></tr>
            	<tr><td colspan="100"><span class="total">Total: $0</span></td></tr>
            </tfoot>
-        </table>      
+        </table>     
+        
+      
       </div><!-- tab-pane -->
+      <button id="submit_btn" type="button" class="btn btn-primary">
+        Submit
+      </button>
+
       <div class="" id="totals">
         <div class="totals total-income">
             <h3>Total yearly income: <span>$0</span></h3>
